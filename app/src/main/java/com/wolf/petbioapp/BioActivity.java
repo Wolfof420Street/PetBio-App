@@ -24,10 +24,34 @@ public class BioActivity extends AppCompatActivity {
 
         extras= getIntent().getExtras();
 
+        if (extras != null) {
+            String name = extras.getString("name");
+            String bio = extras.getString("Bio");
+
+            setUp(name, bio);
+
+        }
+
+
+
 
     }
 
-    public  void setUP (String name, String bio) {
+    public  void setUp (String name, String bio) {
+
+        if (name.equals("Wiz")) {
+            petImage.setImageDrawable(getResources().getDrawable(R.drawable.dog));
+            petBioTextView.setText(bio);
+            nameTextView.setText(name);
+
+
+        } else if (name.equals("Pussy")) {
+            petImage.setImageDrawable(getResources().getDrawable(R.drawable.cat));
+            petBioTextView.setText(bio);
+            nameTextView.setText(name);
+
+
+        }
 
     }
 }
